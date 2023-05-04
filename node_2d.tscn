@@ -1,14 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca1hb4psv8av4"]
+[gd_scene load_steps=7 format=3 uid="uid://ca1hb4psv8av4"]
 
 [ext_resource type="Script" path="res://SimpleController.gd" id="1_gbdit"]
 [ext_resource type="Texture2D" uid="uid://ukyxn6f0ein2" path="res://Player.png" id="2_war4r"]
+[ext_resource type="Script" path="res://Coin.gd" id="3_ed8f4"]
+[ext_resource type="Texture2D" uid="uid://bxdv60bisx03t" path="res://money.png" id="3_m3f23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv16t"]
 size = Vector2(85, 109)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qahqh"]
+size = Vector2(45, 46)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(556, 338)
 script = ExtResource("1_gbdit")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -20,3 +26,27 @@ texture = ExtResource("2_war4r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-1.5, -0.5)
 shape = SubResource("RectangleShape2D_xv16t")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(442, 156)
+script = ExtResource("3_ed8f4")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("3_m3f23")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_qahqh")
+one_way_collision_margin = 0.0
+
+[node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+position = Vector2(-442, -156)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
+position = Vector2(440, 155)
+shape = SubResource("RectangleShape2D_qahqh")
+one_way_collision_margin = 0.0
+
+[connection signal="body_entered" from="AnimatableBody2D/Area2D" to="AnimatableBody2D" method="_on_area_2d_body_entered"]

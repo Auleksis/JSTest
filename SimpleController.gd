@@ -15,6 +15,12 @@ func _physics_process(delta):
 	if Input.is_action_pressed("down"):
 		velocity.y += 1
 		
+	if Input.is_key_pressed(KEY_F):
+		var window = JavaScriptBridge.get_interface("window")
+		window.document.write()
+		var console = JavaScriptBridge.get_interface("console")
+		console.log("sds")
+		
 	velocity = velocity.normalized() * speed
 	
 	move_and_slide()
