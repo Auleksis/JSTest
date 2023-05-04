@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca1hb4psv8av4"]
+
+[ext_resource type="Script" path="res://SimpleController.gd" id="1_gbdit"]
+[ext_resource type="Texture2D" uid="uid://ukyxn6f0ein2" path="res://Player.png" id="2_war4r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv16t"]
+size = Vector2(85, 109)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_gbdit")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_war4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1.5, -0.5)
+shape = SubResource("RectangleShape2D_xv16t")
