@@ -1,0 +1,12 @@
+2a60927148abd1d33b818b535e306557
+::res://::1683223145
+ButtonBehaviour.gd::GDScript::-1::1683215254::0::1::::<>Button<>::
+export_presets.cfg::TextFile::-1::1683118589::0::1::::<><>::
+icon.svg::CompressedTexture2D::8044721600662252782::1683223145::1683223152::1::::<><>::
+JavaScript.gd::GDScript::-1::1683118196::0::1::::<>Node2D<>::
+money.png::CompressedTexture2D::4008288952106202055::1683221762::1683221763::1::::<><>::
+node_2d.tscn::PackedScene::4826943540931445311::1683222629::0::1::::<><>::res://SimpleController.gd<>uid://ukyxn6f0ein2<>res://Coin.gd<>uid://bxdv60bisx03t
+Player.png::CompressedTexture2D::1425919662340694405::1683214952::1683216625::1::::<><>::
+PlayerController.gd::GDScript::-1::1683215959::0::1::::<>Sprite2D<>::
+Coin.gd::GDScript::-1::1683222299::0::1::::<>AnimatableBody2D<>::
+SimpleController.gd::GDScript::-1::1683216308::0::1::::<>CharacterBody2D<>::
